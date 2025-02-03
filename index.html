@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Princewill | Profile Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            color: white;
+        }
+        .profile-card {
+            background: #111;
+            width: 420px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+        }
+        .profile-card img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid gold;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        h2, h3 {
+            margin-bottom: 8px;
+        }
+        p {
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            color: gold;
+            font-size: 22px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: white;
+            transform: scale(1.2);
+        }
+        .skills {
+            margin-top: 15px;
+            text-align: left;
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills li {
+            margin: 5px 0;
+        }
+        .skills i {
+            color: gold;
+            margin-right: 8px;
+        }
+        #utc-time {
+            font-weight: bold;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="richy.JPG" alt="Profile Picture">
+        <h2>Richard Princewill</h2>
+        <h3>Frontend Developer | Tech Enthusiast</h3>
+        <p>Building modern, interactive, and high-performance web applications with React and Node.js.</p>
+        <h4><i class="fas fa-code"></i> Skills</h4>
+        <div class="skills">
+            <ul>
+                <li><i class="fab fa-react"></i> React.js</li>
+                <li><i class="fab fa-node-js"></i> Node.js & Express</li>
+                <li><i class="fas fa-database"></i> SQL & Database Management</li>
+                <li><i class="fas fa-laptop-code"></i> Responsive Web Design</li>
+            </ul>
+        </div>
+        <h4><i class="fas fa-clock"></i> Current UTC Time</h4>
+        <p><span id="utc-time"></span></p>
+        <div class="social-links">
+            <a href="https://github.com/Princewillrichard100" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/richard-princewill100" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+    <script>
+        function updateUTCTime() {
+            document.getElementById("utc-time").textContent = new Date().toUTCString();
+        }
+        setInterval(updateUTCTime, 1000);
+        updateUTCTime();
+    </script>
+</body>
+</html>
